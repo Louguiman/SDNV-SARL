@@ -19,7 +19,7 @@ export class Navigation extends Component {
               <span className="icon-bar"></span>{" "}
             </button>
             <a className="navbar-brand page-scroll" href="#page-top">
-              Diagana Nouvelle Vision
+              Société Diagana Nouvelle Vision
             </a>{" "}
           </div>
 
@@ -53,6 +53,7 @@ export class Navigation extends Component {
                   Contact
                 </a>
               </li>
+                            
             </ul>
           </div>
         </div>

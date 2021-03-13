@@ -582,7 +582,7 @@ th {
 .glyphicon-resize-full:before {
   content: "\e096";
 }
-.glyphicon-resize-small:before {
+.glyphicon-resize:before {
   content: "\e097";
 }
 .glyphicon-exclamation-sign:before {

@@ -1,9 +1,22 @@
 import React, { Component } from "react";
 
 export class Header extends Component {
+  constructor(props) {
+    super(props);
+
+    this.state = {
+      videoURL: "img/intro-bg.webm",
+    };
+  }
+
   render() {
     return (
       <header id="header">
+        <video id="background-video" loop autoPlay>
+          <source src={this.state.videoURL} type="video/webm" />
+          
+          Votre navigateur ne peut pas lire cette video.
+        </video>
         <div className="intro">
           <div className="overlay">
             <div className="container">

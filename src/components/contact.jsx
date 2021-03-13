@@ -1,6 +1,26 @@
 import React, { Component } from "react";
+import emailjs from "emailjs-com";
+import{ init } from 'emailjs-com';
+init("user_tIkqjIiJfLCqb1BJzf3Z6");
 
+
+
+function sendEmail(e) {
+    e.preventDefault();
+
+    emailjs.sendForm('service_xhgz00r', 'template_0wle8zw', e.target)
+      .then((response) => {
+          console.log("SUCCESS!", response.status, response.text);
+          
+      }, (error) => {
+          console.log(error.text);
+      });
+  }
 export class Contact extends Component {
+  
+  
+ 
+  
   render() {
     return (
       <div>
@@ -11,10 +31,15 @@ export class Contact extends Component {
                 <div className="section-title">
                   <h2>Contactez-Nous</h2>
                   <p>
-                    Veuillez remplir les champs ci-dessous afin de nous envoyer un email. Nous vous reviendrons dans les plus brefs delais.
+                    Veuillez remplir les champs ci-dessous afin de nous envoyer
+                    un email. Nous vous reviendrons dans les plus brefs delais.
                   </p>
                 </div>
-                <form name="sentMessage" id="contactForm" noValidate>
+                <form
+                  name="sentMessage"
+                  id="contactForm"
+                  onSubmit={sendEmail}
+                >
                   <div className="row">
                     <div className="col-md-6">
                       <div className="form-group">
@@ -23,6 +48,7 @@ export class Contact extends Component {
                           id="name"
                           className="form-control"
                           placeholder="Nom"
+                          name="from_name"
                           required="required"
                         />
                         <p className="help-block text-danger"></p>
@@ -33,8 +59,21 @@ export class Contact extends Component {
                         <input
                           type="email"
                           id="email"
+                          name="reply_to"
                           className="form-control"
                           placeholder="Email"
+                          required="required"
+                        />
+                        <p className="help-block text-danger"></p>
+                      </div>
+                    </div>
+                    <div className="col-md-6">
+                      <div className="form-group">
+                        <input
+                          type="text"
+                          name="subject"
+                          className="text-primary"
+                          placeholder="Objet"
                           required="required"
                         />
                         <p className="help-block text-danger"></p>
@@ -53,7 +92,7 @@ export class Contact extends Component {
                     <p className="help-block text-danger"></p>
                   </div>
                   <div id="success"></div>
-                  <button type="submit" className="btn btn-custom btn-lg">
+                  <button type="submit" value="Send" className="btn btn-custom btn-lg">
                     Envoyer
                   </button>
                 </form>
@@ -117,8 +156,8 @@ export class Contact extends Component {
           <div className="container text-center">
             <p>
               &copy; 2021 Société Diagana Nouvelle Vision S.A.R.L. Design by{" "}
-              <a href="http://www.templatewire.com" rel="nofollow">
-                Tech-Up
+              <a href="http://www.sank-tech.com" rel="nofollow">
+                Sank-Tech
               </a>
             </p>
           </div>

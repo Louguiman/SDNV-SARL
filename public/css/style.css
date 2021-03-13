@@ -186,8 +186,7 @@ a:focus, .btn:focus, .btn:active:focus, .btn.active:focus, .btn.focus, .btn:acti
 	display: table;
 	width: 100%;
 	padding: 0;
-	background: url(../img/intro-bg.jpg) center center no-repeat;
-	background-color: #e5e5e5;
+	background-color: transparent;
 	-webkit-background-size: cover;
 	-moz-background-size: cover;
 	background-size: cover;
@@ -216,6 +215,12 @@ a:focus, .btn:focus, .btn:active:focus, .btn.active:focus, .btn.focus, .btn:acti
 	line-height: 30px;
 	margin: 0 auto;
 	margin-bottom: 60px;
+}
+#background-video{
+	position: fixed;
+	z-index: -1;
+	width: 100%;
+	float: left;
 }
 header .intro-text {
 	padding-top: 350px;
@@ -335,7 +340,8 @@ header .intro-text {
 }
 .portfolio-item {
 	margin: 1px -15px 0 -14px;
-	padding: 0;
+	padding: 10;
+	
 }
 .portfolio-item .hover-bg {
 	overflow: hidden;
